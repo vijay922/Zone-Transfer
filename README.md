@@ -15,4 +15,28 @@ This tool is a Python script designed to test DNS Zone Transfers. It checks if a
 - **dnspython library**:
   Install it using pip:
   ```bash
-  pip install dnspython
+  pip3 install dnspython
+
+# Usage
+
+Test a single domain for DNS zone transfer:
+```
+python3 zonetransfer.py example.com
+```
+Batch Domains
+Test multiple domains from a file:
+
+```
+python3 zonetransfer.py -l domains.txt
+```
+
+## Example Output
+For a domain allowing zone transfers:
+```
+[*] Found NS: ns1.example.com
+Zone transfer allowed for example.com
+
+           Subdomain                   IP
+           www.example.com    192.168.1.1
+           mail.example.com   192.168.1.2
+```
